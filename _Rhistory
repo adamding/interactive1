@@ -1,15 +1,3 @@
-#Residual standard error: 0.1516 on 13 degrees of freedom
-y<-workdata$KP1705Full
-tobs<-workdata$Hour
-yfit<-y[!is.na(y)]
-tobs<-tobs[!is.na(y)]
-Fit1705.Full<-nls(yfit~ MODsolver(x0,c(kg,Nmax)),start=list(x0=5.1,kg=0.68,Nmax=1.2e9) )
-summary(Fit1705.Full)
-y<-workdata$KP1705Quarter
-tobs<-workdata$Hour
-yfit<-y[!is.na(y)]
-tobs<-tobs[!is.na(y)]
-Fit1705.Quarter<-nls(yfit~ MODsolver(x0,c(kg,Nmax)),control=nls.control(tol=1e-4),start=list(x0=5.1,kg=0.68,Nmax=1.2e9) )
 summary(Fit1705.Quarter)
 #      Estimate Std. Error t value Pr(>|t|)
 #x0   5.099e+00  1.862e-01  27.381 3.47e-12 ***
@@ -510,3 +498,15 @@ author('interactive')
 slidify(index.Rmd)
 slidify('index.Rmd')
 slidify('index.Rmd')
+slidify('index.Rmd')
+library(slidify)
+slidify('index.Rmd')
+publish(title='TryQuiz','index.html',host='rpubs')
+publish(interactive',host='rpubs')
+publish('interactive',host='rpubs')
+slidify(index.Rmd)
+slidify('index.Rmd')
+publish('interactive',host="rpubs")
+publish('interactive',host="dropBox")
+publish('interactive',host="dropbox")
+publish(user="adamding",repo="my_git_publishing")
